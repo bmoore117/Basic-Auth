@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: JSON Basic Authentication
- * Description: Basic Authentication handler for the JSON API, used for development and debugging purposes
+ * Description: Updated for WP 6.3.2. Basic Authentication handler for the JSON API, used for development and debugging purposes
  * Author: WordPress API Team
  * Author URI: https://github.com/WP-API
  * Version: 0.1
@@ -35,6 +35,10 @@ function json_basic_auth_handler( $user ) {
 	remove_filter( 'determine_current_user', 'json_basic_auth_handler', 20 );
 
 	$user = wp_authenticate( $username, $password );
+
+	if ( is_wp_error( $user ) ) {
+		$user = wp_authenticate_application_password( NULL, $username, $password );
+	}
 
 	add_filter( 'determine_current_user', 'json_basic_auth_handler', 20 );
 

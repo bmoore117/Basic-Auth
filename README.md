@@ -1,4 +1,7 @@
 # Basic Authentication handler
+
+Updated to work with WordPress 6.3.2
+
 This plugin adds Basic Authentication to a WordPress site.
 
 Note that this plugin requires sending your username and password with every

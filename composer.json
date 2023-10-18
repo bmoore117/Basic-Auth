@@ -1,5 +1,5 @@
 {
 	"name" : "wp-api/basic-auth",
-	"description" : "Basic Authentication handler for the JSON API, used for development and debugging purposes",
+	"description" : "Updated for WP 6.3.2. Basic Authentication handler for the JSON API, used for development and debugging purposes",
 	"type" : "wordpress-plugin"
 }
